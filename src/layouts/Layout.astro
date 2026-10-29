@@ -1,0 +1,125 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  image?: string;
+}
+
+const {
+  title = "Pulso — El reproductor de YouTube Music que tu escritorio se merecía",
+  description = "Cliente nativo de escritorio para YouTube Music. Ultraligero, sin patrocinios gracias a SponsorBlock integrado, visualizador de audio en tiempo real y paleta dinámica de colores. Disponible para macOS, Windows y Linux.",
+  canonical = "https://pulso.dannielnavas.dev",
+  image = "/og-image.jpg"
+} = Astro.props;
+
+const siteUrl = "https://pulso.dannielnavas.dev";
+const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": `${siteUrl}/#software`,
+      "name": "Pulso",
+      "alternateName": "Pulso Desktop Music Player",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "macOS, Windows, Linux",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": description,
+      "softwareVersion": "0.1.0",
+      "author": {
+        "@type": "Person",
+        "name": "Danniel Navas"
+      },
+      "downloadUrl": "https://github.com/dannielnavas/ytmdannieldev/releases/latest",
+      "featureList": [
+        "SponsorBlock integrado con omisión automática de intros y patrocinios",
+        "Paleta cromática dinámica adaptada a la carátula del álbum en reproducción",
+        "Visualizador de espectro de audio en tiempo real con Web Audio API",
+        "Mini Player flotante y control mediante atajos multimedia globales",
+        "Almacenamiento seguro local mediante Electron safeStorage y llavero del SO"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "url": siteUrl,
+      "name": "Pulso Desktop Player",
+      "description": description,
+      "publisher": {
+        "@type": "Person",
+        "name": "Danniel Navas"
+      },
+      "inLanguage": "es"
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="YouTube Music desktop player, Pulso, SponsorBlock desktop, reproductor musica macos, electron music player, audio visualizer, client youtube music linux windows" />
+    <meta name="author" content="Danniel Navas" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
+    <meta name="theme-color" content="#046A38" />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pulso" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={fullImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="675" />
+    <meta property="og:image:alt" content="Interfaz de Pulso Desktop Music Player" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@dannielnavas" />
+    <meta name="twitter:creator" content="@dannielnavas" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullImageUrl} />
+
+    <!-- Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body class="bg-[#030a06] text-zinc-100 antialiased selection:bg-[#E34222] selection:text-[#F9EBD7] min-h-screen flex flex-col justify-between">
+    <!-- Ambient Stage Background (Controlled dynamically by cover palette) -->
+    <div id="ambient-stage" class="fixed inset-0 -z-10 pointer-events-none transition-colors duration-1000 ease-out overflow-hidden" aria-hidden="true">
+      <div id="ambient-glow-primary" class="absolute -top-[15%] left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-[#F9EBD7]/12 blur-[170px] rounded-full transition-all duration-1000"></div>
+      <div id="ambient-glow-secondary" class="absolute top-[40%] -right-[10%] w-[700px] h-[550px] bg-[#046A38]/40 blur-[190px] rounded-full transition-all duration-1000"></div>
+      <div id="ambient-glow-tertiary" class="absolute top-[65%] -left-[10%] w-[600px] h-[450px] bg-[#E34222]/15 blur-[170px] rounded-full transition-all duration-1000"></div>
+    </div>
+
+    <slot />
+  </body>
+</html>

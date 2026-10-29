@@ -1,0 +1,138 @@
+---
+---
+
+<section id="sponsorblock" class="py-24 sm:py-32 border-t border-white/[0.06] relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Identifier (Editorial label, NOT a repetitive pill chip) -->
+    <div class="flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-zinc-500 mb-6">
+      <span class="text-[#E34222] font-bold">01</span>
+      <span>//</span>
+      <span>OMISIÓN AUTOMÁTICA EN TIEMPO REAL</span>
+    </div>
+
+    <!-- Editorial Asymmetric Split Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Text Description -->
+      <div class="lg:col-span-5 space-y-6">
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-[1.15] text-balance">
+          Música pura. Sin menciones ni intros eternas.
+        </h2>
+
+        <p class="text-base sm:text-lg text-zinc-300 leading-relaxed font-normal">
+          Muchos videos musicales en YouTube incluyen hasta un minuto de intros teatrales, promociones patrocinadas de marcas o peticiones de suscripción antes de que empiece la canción.
+        </p>
+
+        <p class="text-base sm:text-lg text-zinc-400 leading-relaxed font-normal">
+          Pulso integra el motor público de <strong class="text-zinc-200 font-semibold">SponsorBlock</strong> directamente en su pipeline de reproducción. En cuanto la pista comienza, identifica los segmentos no musicales y realiza un salto milimétrico automático sin cortar el compás.
+        </p>
+
+        <!-- Metric highlights (Minimalist typography, NOT card boxes) -->
+        <div class="pt-4 grid grid-cols-2 gap-6 border-t border-white/[0.08]">
+          <div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">0 ms</div>
+            <div class="text-xs sm:text-sm text-zinc-400 mt-1">Latencia al detectar y saltar marcas</div>
+          </div>
+          <div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 tracking-tight">100%</div>
+            <div class="text-xs sm:text-sm text-zinc-400 mt-1">Configurable por categoría de salto</div>
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <a
+            href="#downloads"
+            class="inline-flex items-center gap-2 text-sm font-semibold text-[#F9EBD7] hover:text-[#E34222] transition-colors group"
+          >
+            <span>Descargar Pulso y probar SponsorBlock</span>
+            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Interactive Demonstration Timeline -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <!-- Live Scrubber Comparison Stage with Liquid Glass -->
+        <div class="p-6 sm:p-8 rounded-3xl liquid-card space-y-8">
+          
+          <div class="flex items-center justify-between pb-4 border-b border-white/[0.06]">
+            <div>
+              <span class="text-xs font-mono uppercase text-zinc-400 tracking-wider">Demostración en Vivo</span>
+              <h3 class="text-base sm:text-lg font-bold text-white mt-0.5">Cómo procesa Pulso una pista con patrocinio</h3>
+            </div>
+            <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20">
+              API SponsorBlock Conectada
+            </span>
+          </div>
+
+          <!-- Timeline A: Conventional Player (Without Pulso) -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-xs font-medium">
+              <span class="text-zinc-400 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                <span>En navegador web convencional:</span>
+              </span>
+              <span class="text-red-400 font-mono">42 segundos de interrupción forzada</span>
+            </div>
+
+            <!-- Track Bar -->
+            <div class="h-6 w-full bg-zinc-800 rounded-md overflow-hidden flex relative">
+              <div class="w-[20%] bg-zinc-700 flex items-center justify-center text-[10px] text-zinc-300 font-mono">Intro (0:00)</div>
+              <div class="w-[30%] bg-red-600/80 flex items-center justify-center text-[11px] text-white font-semibold font-mono tracking-wide">
+                Patrocinador comercial (0:30 - 1:12)
+              </div>
+              <div class="w-[50%] bg-zinc-700 flex items-center justify-center text-[10px] text-zinc-300 font-mono">Música real...</div>
+            </div>
+          </div>
+
+          <!-- Timeline B: Pulso Native (With SponsorBlock) -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-xs font-medium">
+              <span class="text-white flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span>En Pulso Desktop:</span>
+              </span>
+              <span class="text-emerald-400 font-mono font-semibold">Salto instantáneo a 1:12 (Cero espera)</span>
+            </div>
+
+            <!-- Track Bar Pulso -->
+            <div class="h-6 w-full bg-zinc-800 rounded-md overflow-hidden flex relative">
+              <div class="w-[20%] bg-zinc-600 flex items-center justify-center text-[10px] text-zinc-200 font-mono">Intro</div>
+              <div class="w-[30%] bg-emerald-500/20 border-x border-dashed border-emerald-500/60 flex items-center justify-center text-[10px] text-emerald-300 font-mono">
+                [Omitido 42s] ⚡
+              </div>
+              <div class="w-[50%] bg-[#046A38] flex items-center justify-center text-[11px] text-[#F9EBD7] font-semibold font-mono border-t border-[#F9EBD7]/20">
+                Audio continuo sin cortes
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature tags list in clean typography -->
+          <div class="pt-2 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-zinc-300 border-t border-white/[0.06]">
+            <div class="flex items-start gap-2">
+              <span class="text-[#E34222] font-bold mt-0.5">✓</span>
+              <span>Intros y outros cinematográficas</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="text-[#E34222] font-bold mt-0.5">✓</span>
+              <span>Segmentos publicitarios de marcas</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="text-[#E34222] font-bold mt-0.5">✓</span>
+              <span>Menciones de suscripción y likes</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

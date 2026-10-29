@@ -1,0 +1,120 @@
+---
+---
+
+<section id="visualizer" class="py-24 sm:py-32 border-t border-white/[0.06] relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Identifier -->
+    <div class="flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-zinc-500 mb-6">
+      <span class="text-[#E34222] font-bold">03</span>
+      <span>//</span>
+      <span>ARQUITECTURA DE ESCRITORIO</span>
+    </div>
+
+    <!-- Editorial Headline -->
+    <div class="max-w-3xl mb-16 sm:mb-20">
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-[1.15] text-balance">
+        Ingeniería nativa pensada para audiófilos y creadores.
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-zinc-300 font-normal leading-relaxed text-balance">
+        Pulso combina la agilidad de Angular 22 con las capacidades profundas del sistema operativo provistas por Electron. El resultado es un reproductor que responde de inmediato a tu flujo de trabajo.
+      </p>
+    </div>
+
+    <!-- Three Architectural Pillars (Open layout with hairline borders, not closed bento boxes) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+      
+      <!-- Pillar 1: Visualizador de Audio -->
+      <div class="space-y-4 pt-6 border-t border-white/[0.08]">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-mono text-[#F9EBD7]">AUDIO ENGINE</span>
+          <span class="text-xs font-mono text-zinc-500">60 FPS CANVAS</span>
+        </div>
+        
+        <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+          Visualizador de espectro en tiempo real
+        </h3>
+
+        <p class="text-sm text-zinc-400 leading-relaxed font-normal">
+          Conexión directa mediante Web Audio API. Las frecuencias se analizan mediante transformada rápida de Fourier (FFT) y se dibujan a 60 cuadros por segundo mediante Canvas acelerado por hardware sin degradar la reproducción.
+        </p>
+
+        <!-- Dynamic Mini Spectrum graphic using new colors -->
+        <div class="pt-4 flex items-end gap-1.5 h-16 w-full">
+          <div class="w-1/6 bg-[#E34222] rounded-t-sm animate-wave-1"></div>
+          <div class="w-1/6 bg-[#F9EBD7] rounded-t-sm animate-wave-2"></div>
+          <div class="w-1/6 bg-[#046A38] rounded-t-sm animate-wave-3"></div>
+          <div class="w-1/6 bg-[#E34222] rounded-t-sm animate-wave-4"></div>
+          <div class="w-1/6 bg-[#F9EBD7] rounded-t-sm animate-wave-5"></div>
+          <div class="w-1/6 bg-[#046A38] rounded-t-sm animate-wave-2"></div>
+        </div>
+      </div>
+
+      <!-- Pillar 2: Mini Player & Shortcuts -->
+      <div class="space-y-4 pt-6 border-t border-white/[0.08]">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-mono text-[#F9EBD7]">WORKFLOW</span>
+          <span class="text-xs font-mono text-zinc-500">SIEMPRE VISIBLE</span>
+        </div>
+        
+        <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+          Mini Player flotante y atajos globales
+        </h3>
+
+        <p class="text-sm text-zinc-400 leading-relaxed font-normal">
+          Cambia de canción, pausa o ajusta el volumen desde cualquier aplicación o pantalla. Pulso se integra con las teclas multimedia de tu teclado físico y ofrece un modo flotante compacto que se mantiene sobre tus ventanas de trabajo.
+        </p>
+
+        <!-- Floating Mini Window simulation with Liquid Glass -->
+        <div class="pt-4">
+          <div class="p-3.5 rounded-2xl liquid-card shadow-xl flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-xl bg-[#046A38]/30 border border-[#F9EBD7]/20 flex items-center justify-center text-[#F9EBD7]">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-white">Modo Compacto PiP</div>
+                <div class="text-[10px] text-zinc-400 font-mono">⌘ + Shift + P</div>
+              </div>
+            </div>
+            <span class="text-[10px] text-[#F9EBD7] font-mono bg-[#046A38]/60 border border-[#F9EBD7]/30 px-2 py-0.5 rounded-full">Always on Top</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar 3: SafeStorage Security -->
+      <div class="space-y-4 pt-6 border-t border-white/[0.08]">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-mono text-[#F9EBD7]">SEGURIDAD LOCAL</span>
+          <span class="text-xs font-mono text-zinc-500">ZERO CLOUD</span>
+        </div>
+        
+        <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+          Credenciales cifradas con el llavero del SO
+        </h3>
+
+        <p class="text-sm text-zinc-400 leading-relaxed font-normal">
+          Pulso respeta tu privacidad por diseño. Cero servidores intermediarios, cero telemetría invasiva. Tus tokens y cookies de YouTube Music se cifran localmente mediante <strong class="text-zinc-200">Electron.safeStorage</strong> con Keychain, DPAPI o Secret Service.
+        </p>
+
+        <!-- Security Badge Graphic -->
+        <div class="pt-4">
+          <div class="p-3.5 rounded-2xl liquid-card flex items-center gap-3">
+            <div class="w-8 h-8 rounded-xl bg-[#046A38]/60 border border-[#F9EBD7]/30 flex items-center justify-center text-[#F9EBD7]">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-white">Cifrado a Nivel de Hardware</div>
+              <div class="text-[10px] text-zinc-400 font-mono">Claves privadas nunca expuestas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
